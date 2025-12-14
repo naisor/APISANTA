@@ -1,0 +1,14 @@
+# Este archivo es para configurar cómo Render despliega tu servicio PHP
+services:
+  - type: web
+    name: api-Santa
+    env: docker
+    plan: free # Usa el plan gratuito para pruebas
+    rootDir: .
+    buildCommand: |
+      # Comando para instalar dependencias de PHP si las hubiera. 
+      # Para tu caso simple, no es necesario, pero se deja así.
+      echo "No hay dependencias para instalar"
+    startCommand: |
+      # Comando para iniciar un servidor web simple (ej. PHP Built-in Server)
+      php -S 0.0.0.0:$PORT
